@@ -21,7 +21,7 @@ let globalData = [];
 let url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 d3.json(url).then(data => {
-    globalData = data
+    let globalData = data
     init(globalData)
 });
 
@@ -103,7 +103,8 @@ function init(data) {
                 (grades[i] + 1) + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
         }
 
-        return div;
+        return div
+        
     };
 
     legend.addTo(myMap);
